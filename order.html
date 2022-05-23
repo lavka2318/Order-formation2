@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <title>Формирование Заказа</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="styles/style.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <img src="img/logo.jpg" width="230px">
+    </header>
+    <main>
+        <h3 class="page-title">Добавление позиций заказа</h3>
+        <p class="text-price"></p>
+        <div class="add-form">
+            <div class="select-wrapper">
+                <select class="js-example-basic-single select-category" style="width: 100%;" onchange="changePrice()" ></select>
+            </div>
+        </div>
+
+        <div class="discount-wrapper">
+            <span>Скидка: </span>
+            <div>
+                <input type="radio" id="discountChoice1"
+                       name="discount" value="0.05">
+                <label for="discountChoice1">5%</label>
+
+                <input type="radio" id="discountChoice2"
+                       name="discount" value="0.10">
+                <label for="discountChoice2">10%</label>
+
+                <input type="radio" id="discountChoice3"
+                       name="discount" value="0" checked>
+                <label for="discountChoice3">Нет скидки</label>
+            </div>
+        </div>
+
+        <div class="order">
+            <table class="table-order">
+                <thead>
+                <tr>
+                    <th>
+                        №
+                    </th>
+                    <th>
+                        Позиция
+                    </th>
+                    <th>
+                        Цена
+                    </th>
+                    <th>
+                        Вес
+                    </th>
+                    <th>
+                        Сумма
+                    </th>
+
+                </tr>
+                </thead>
+                <tbody class="tbody">
+
+                </tbody>
+            </table>
+        </div>
+        <a class="submit-btn" onclick="generateTbody()" href="resultOrder.html">Сформировать заказ</a>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.js-example-basic-single').select2();
+        });
+    </script>
+
+    <script src="js/data.js"></script>
+    <script src="js/order.js"></script>
+</body>
+</html>
