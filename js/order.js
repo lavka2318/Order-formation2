@@ -18,7 +18,7 @@ categories.forEach(category => {
 form.innerHTML += `<label class="price">Цена за кг: ${localStorage.getItem(flagPrice + categories[0])} руб.</label>
                     <div>
                         <label style="font-size: 14px;">Вес: </label>
-                        <input class="input-weight" placeholder="Введите вес...">
+                        <input class="input-weight" type="number" placeholder="Введите вес...">
                     </div>
                    <button class="add-button" onclick="addRecord()">Добавить</button>`;
 
